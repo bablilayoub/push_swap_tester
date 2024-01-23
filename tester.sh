@@ -288,7 +288,7 @@ fi
 
 # Check input
 if [ $# -ne 2 ]; then
-	printf "${RED_BACKGROUND} USAGE ${NC} : ./tester.sh [number of arguments] [number of tests]\n"
+	printf "${RED_BACKGROUND} USAGE ${NC} : ./tester.sh [number of random numbers] [number of tests]\n"
 	exit 1
 fi
 
@@ -309,9 +309,9 @@ if [ ! -f $CHECKER_PATH ]; then
 	exit 1
 fi
 
-# Check if number of arguments is a number
+# Check if number of random numbers is a number
 if ! [[ $NUMBER_OF_ARGUMENTS =~ ^[0-9]+$ ]]; then
-	printf "${RED_BACKGROUND} ERROR ${NC} : invalid number of arguments\n"
+	printf "${RED_BACKGROUND} ERROR ${NC} : invalid number of random numbers\n"
 	exit 1
 fi
 

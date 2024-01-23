@@ -12,24 +12,25 @@
 	- [License](#license)
   
 ## Description
-This tester is made to test the push_swap project from 42 / 1337 school, it will test your push_swap program with a lot of different inputs and will give you the result of each test and the average of all the tests.
+This tester is designed to test the push_swap project from the 42 / 1337 school. It will assess your push_swap program with various inputs and provide the result of each test along with the average of all the tests.
 
 ## Usage
-To use this tester you need to clone it in the same directory as your push_swap program, then you can run the tester with the following command:
+To use this tester, clone it in the same directory as your push_swap program. Then, run the tester with the following command:
 ```bash
 git clone
 cd push_swap_tester
-./tester.sh [number of tests] [number of elements]
+./tester.sh [number of random numbers] [number of tests]
 ```
 
 ## Example
 ```bash
 ./tester.sh 100 100
 ```
-This will run 100 tests with 100 random elements in each test.
+This will execute 100 tests, each with 100 random numbers.
 
 ## Output
-The output of the tester will be something like this:
+The tester's output will resemble the following:
+
 ```bash
 Test case : 1 | STATUS:  KO  | Number of instructions: 531
 ```
@@ -37,25 +38,23 @@ Or
 ```bash
 Test case : 1 | STATUS:  OK  | Number of instructions: 656
 ```
-The tester will also give you the average of all the tests at the end of the execution.
+Additionally, the tester will provide the average of all the tests at the end of the execution.
 
-i have something else for you, you can also test parsing with this tester, just write the following command:
+I have something else for you, you can also test parsing with this tester. Just use the following command:
 ```bash
 ./tester.sh parsing
 ```
-This will test your program with a lot of different inputs , such as : duplicate numbers, non numeric arguments, empty arguments, etc...
+This will test your program with various inputs, such as duplicate numbers, non-numeric arguments, empty arguments, etc.
 
 # Oh wait, there is more
-i know you are angry because your session getting full because of error files, so i made a script that will delete all the error files, just write the following command:
+I understand that your session is getting full due to error files, so I added a clean option to the tester. Just use the following command:
 ```bash
 ./tester.sh clean
 ```
 ## Contact
-If you have any questions about this tester, you can contact me on discord: .thexd
+If you have any questions about this tester, you can contact me on Discord: .thexd
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
 
-```
-And that's it, i hope you will enjoy this tester, and if you have any suggestions, please let me know.
-```
+And that's it! I hope you enjoy this tester, and if you have any suggestions, please let me know.

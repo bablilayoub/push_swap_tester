@@ -22,6 +22,7 @@ git clone https://github.com/bablilayoub/push_swap_tester.git && cd push_swap_te
 
 ## Testing example
 ```bash
+./tester.sh [number of random numbers] [number of tests]
 ./tester.sh 100 100
 ```
 This will execute 100 tests, each with 100 random numbers.

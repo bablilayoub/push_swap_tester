@@ -245,6 +245,69 @@ function parsing_tester() {
 	else
 		printf "${RED_BACKGROUND} FAILURE ${NC}\n"
 	fi
+
+	# Testing int max	
+	RESULT=$(./$PUSH_SWAP_PATH 2147483647 | wc -l | tr -d ' ')
+	printf "Testing int max: "
+	if [ $RESULT -eq 0 ]; then
+		printf "${GREEN_BACKGROUND} SUCCESS ${NC}\n"
+	else
+		printf "${RED_BACKGROUND} FAILURE ${NC}\n"
+	fi
+
+	# Testing int min
+	RESULT=$(./$PUSH_SWAP_PATH -2147483648 | wc -l | tr -d ' ')
+	printf "Testing int min: "
+	if [ $RESULT -eq 0 ]; then
+		printf "${GREEN_BACKGROUND} SUCCESS ${NC}\n"
+	else
+		printf "${RED_BACKGROUND} FAILURE ${NC}\n"
+	fi
+
+	# Testing int max + 1 (must return : Error in standard error)
+	RESULT=$(./$PUSH_SWAP_PATH 2147483648 2>&1)
+	printf "Testing int max + 1: "
+	if [ "$RESULT" == "Error" ]; then
+		printf "${GREEN_BACKGROUND} SUCCESS ${NC}\n"
+	else
+		printf "${RED_BACKGROUND} FAILURE ${NC}\n"
+	fi
+
+	# Testing int min - 1 (must return : Error in standard error)
+	RESULT=$(./$PUSH_SWAP_PATH -2147483649 2>&1)
+	printf "Testing int min - 1: "
+	if [ "$RESULT" == "Error" ]; then
+		printf "${GREEN_BACKGROUND} SUCCESS ${NC}\n"
+	else
+		printf "${RED_BACKGROUND} FAILURE ${NC}\n"
+	fi
+
+	# Testing numbers with zeros at the beginning (must work)
+	RESULT=$(./$PUSH_SWAP_PATH 000 001 002 003 004 005 006 007 008 009 010 011 012 013 014 015 016 017 018 019 020 | wc -l | tr -d ' ')
+	printf "Testing numbers with zeros at the beginning: "
+	if [ $RESULT -eq 0 ]; then
+		printf "${GREEN_BACKGROUND} SUCCESS ${NC}\n"
+	else
+		printf "${RED_BACKGROUND} FAILURE ${NC}\n"
+	fi
+
+	# Testing numbers with zeros at the beginning and duplicate arguments (must return : Error in standard error)
+	RESULT=$(./$PUSH_SWAP_PATH 000 001 002 003 004 005 006 007 008 009 010 011 012 013 014 015 016 017 018 019 020 000 001 002 003 004 005 006 007 008 009 010 011 012 013 014 015 016 017 018 019 020 2>&1)
+	printf "Testing numbers with zeros at the beginning and duplicate arguments: "
+	if [ "$RESULT" == "Error" ]; then
+		printf "${GREEN_BACKGROUND} SUCCESS ${NC}\n"
+	else
+		printf "${RED_BACKGROUND} FAILURE ${NC}\n"
+	fi
+
+	# Testing if big numbers overflow (must return : Error in standard error)
+	RESULT=$(./$PUSH_SWAP_PATH 10000000000000000000000000000000000000000000000000000000000000000 2>&1)
+	printf "Testing if big numbers overflow: "
+	if [ "$RESULT" == "Error" ]; then
+		printf "${GREEN_BACKGROUND} SUCCESS ${NC}\n"
+	else
+		printf "${RED_BACKGROUND} FAILURE ${NC}\n"
+	fi
 }
 
 # Main

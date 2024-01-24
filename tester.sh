@@ -1,4 +1,5 @@
 # Push swap tester BY: Ayoub Bablil
+# If you have any questions or suggestions, feel free to contact me on discord: .thexd
 
 # Colors
 RED='\033[0;31m'

@@ -5,7 +5,7 @@
 	- [Table of contents](#table-of-contents)
 	- [Description](#description)
 	- [Usage](#usage)
-	- [Example](#example)
+	- [Testing example](#testing-example)
 	- [Output](#output)
 - [Oh wait, there is more](#oh-wait-there-is-more)
 	- [Contact](#contact)
@@ -17,12 +17,10 @@ This tester is designed to test the push_swap project from the 42 / 1337 school.
 ## Usage
 To use this tester, clone it in the same directory as your push_swap program. Then, run the tester with the following command:
 ```bash
-git clone https://github.com/bablilayoub/push_swap_tester.git
-cd push_swap_tester
-./tester.sh [number of random numbers] [number of tests]
+git clone https://github.com/bablilayoub/push_swap_tester.git && cd push_swap_tester
 ```
 
-## Example
+## Testing example
 ```bash
 ./tester.sh 100 100
 ```

@@ -17,7 +17,7 @@ This tester is designed to test the push_swap project from the 42 / 1337 school.
 ## Usage
 To use this tester, clone it in the same directory as your push_swap program. Then, run the tester with the following command:
 ```bash
-git clone https://github.com/bablilayoub/push_swap_tester.git && cd push_swap_tester
+git clone https://github.com/bablilayoub/push_swap_tester.git && cd push_swap_tester && ./tester.sh help
 ```
 
 ## Testing example

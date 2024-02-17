@@ -184,6 +184,24 @@ function parsing_tester() {
 		printf "${RED_BACKGROUND} FAILURE ${NC}\n"
 	fi
 
+	# Test program with tabulation arguments (must return : Error in standard error)
+	RESULT=$(./$PUSH_SWAP_PATH "1	2	3	4	5" 2>&1)
+	printf "Testing program with tabulation arguments: "
+	if [ "$RESULT" == "Error" ]; then
+		printf "${GREEN_BACKGROUND} SUCCESS ${NC}\n"
+	else
+		printf "${RED_BACKGROUND} FAILURE ${NC}\n"
+	fi
+
+	# Test program with space and tabulation arguments (must return : Error in standard error)
+	RESULT=$(./$PUSH_SWAP_PATH "1 2 	3 	4 	5" 2>&1)
+	printf "Testing program with space and tabulation arguments: "
+	if [ "$RESULT" == "Error" ]; then
+		printf "${GREEN_BACKGROUND} SUCCESS ${NC}\n"
+	else
+		printf "${RED_BACKGROUND} FAILURE ${NC}\n"
+	fi
+
 	# Test program with sorted arguments
 	RESULT=$(./$PUSH_SWAP_PATH 1 2 3 4 5 | wc -l | tr -d ' ')
 	printf "Testing program with sorted arguments: "
